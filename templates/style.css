@@ -1,0 +1,52 @@
+body{
+	background: black;
+	font-family: "Times New Roman", Times, serif;
+}
+
+/*.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}*/
+
+
+.images{
+	background-size: 150px;
+	width: 300px;
+	height: 300px;
+	border: 2px solid;
+	color: pink;
+}
+
+.h1-about{
+	color: white;
+	padding: 20px;
+}
+.bio-text{
+	width: 400px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 25px;
+    padding-bottom: 55px;
+    position: relative;
+	color: purple;
+}
+
+.image-css{
+	background: black;
+}
+
+.tables{
+	width: 50%;
+	text-align: center;
+color:purple;
+}
+
+
+
+
+
+
+	
+	
