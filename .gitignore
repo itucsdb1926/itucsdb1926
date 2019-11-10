@@ -6,6 +6,6 @@ __pycache__
 .pydevproject
 .idea
 .code
-
+flask_session/
 venv/
 docs/build/
