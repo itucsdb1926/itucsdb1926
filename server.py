@@ -8,7 +8,7 @@ app.secret_key = 'replace later'
 @app.route("/", methods = ['GET', 'POST'])
 def login():
 	reg_form = RegistrationForm()
-		if reg_form.validate_on_submit():
+	if reg_form.validate_on_submit():
 		return "Succesfully registered"
 	return render_template("login_layout.html",form = reg_form)
 
