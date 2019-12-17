@@ -1,0 +1,44 @@
+{% from 'form_helper.html' import displayField %}
+
+{% extends "prelogin-layout.html" %}
+
+{% block title %}Register {% endblock title%}
+
+{% block content %}
+    <div class="container mt-3">
+        <div class="row justify-content-center mb-3">
+            <h1 class="col-6">Hospital Appointment System</h1>
+        </div>
+        <div class="row justify-content-center">
+
+            <div class="col-4">
+
+                <form action = "{{url_for('register')}}", method = "POST">
+
+                    {{ displayField(form.username,'Username', autocomplete = "off", autofocus = true )}}
+                    {{ displayField(form.password,'Password')}}
+                    {{ displayField(form.confirm_pswd,'Retype Password')}}
+                    {{ displayField(form.age,'Age')}}
+                    {{ displayField(form.weight,'Weight')}}
+                    {{ displayField(form.height,'Height')}}
+                    {{ displayField(form.bmi,'BMI')}}
+                    {{ displayField(form.blood_type,'Blood Type')}}
+                    {{ displayField(form.family_doctor,'Family Doctor')}}
+
+                    {{ form.child }}
+                   <label class="ml-2" for="child">Do you have a child?</label>
+
+
+                    <div class="row justify-content-center mt-4 mb-4">
+                        <div class="col-md-6">
+                            {{ form.submit_button(class_='btn btn-primary bg-violet btn-lg btn-block') }}
+                        </div>
+                    </div>
+                    <p>If you are already registered, <a href="login">login here!</a></p>
+                    {{form.csrf_token}}
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
