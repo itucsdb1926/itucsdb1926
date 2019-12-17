@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>Children</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>BMI</th>
+      <th>Blood Type</th>
+  </tr>
+{% for row in rows %}
+<tr>
+    <td>{{ row.name }}</td>
+    <td>{{ row.age}}</td>
+    <td>{{ row.height}}</td>
+    <td>{{ row.weight}}</td>
+    <td>{{ row.bmi}}</td>
+    <td>{{ row.blood_type}}</td>
+</tr>
+{% endfor %}
+
+</table>
