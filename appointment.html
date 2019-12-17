@@ -1,0 +1,58 @@
+{% from 'form_helper.html' import displayField %}
+{% extends "prelogin-layout.html" %}
+
+{% block title %}Book An Appointment {% endblock title%}
+
+{% block content %}
+    <div class="container mt-3">
+        <div class="row justify-content-center mb-3">
+            <h1 class="col-6">Hospital Appointment System</h1>
+        </div>
+        <div class="row justify-content-center mb-3">
+            <h4 class="col-6">Book an appointment...</h4>
+        </div>
+        <div class="row justify-content-center">
+
+            <div class="col-4">
+
+                <form action = "{{url_for('appointment')}}", method = "POST">
+
+                 {{ displayField(form.username,'Username', autocomplete = "off", autofocus = true )}}
+
+                        <div class="input-group mt-4 mb-4">
+
+                        <span class="input-group-addon ">Please select a hospital : </span>
+                        <select name="hospital_select" class="selectpicker form-control col-md-6">
+                            {% for hospital in form.hospital_name.choices %}
+                                <option value="{{ hospital }}">{{ hospital}}</option>
+                            {% endfor %}
+                        </select>
+                        </div>
+                        <div class="input-group mt-4 mb-4">
+                                          <span class="input-group-addon ">Please select a clinic : </span>
+                        <select name="clinic_select" class="selectpicker form-control col-md-6">
+                            {% for clinic in form.clinic.choices %}
+                                <option value="{{ clinic.name }}">{{ clinic.name }}</option>
+                            {% endfor %}
+                        </select>
+                        </div>
+                    <div class="input-group mt-4 mb-4 ">
+                            <span class="input-group-addon ">Please select a doctor : </span>
+                        <select name="doctor_select" class="selectpicker form-control col-md-6">
+                            {% for doctor in form.doctor_name.choices %}
+                                <option value="{{ doctor }}">{{ doctor }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="row justify-content-center mt-4 mb-4">
+                        <div class="col-md-8">
+                            {{ form.submit_button(class_='btn btn-primary bg-violet btn-lg btn-block') }}
+                        </div>
+                    </div>
+                    {{form.csrf_token}}
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
