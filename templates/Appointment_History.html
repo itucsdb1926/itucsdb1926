@@ -4,21 +4,64 @@
 <title><Hospital Appointment System</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="  sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="style.css" />
+    <style>
 
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
 </head>
 
 <body>
 	<nav class="navbar navbar-inverse">
- 
+
+    <div class="container-fluid">
       <ul class="nav navbar-nav">
-	  <li><a  href="index.html" style="color:Violet;">Home</a></li>
-	  <li><a href="Appointment_Information.html" style="color:Violet;">Appointment Information</a></li>
-	  <li ><a href="Appointment_History.html" style="color:Violet;">Appointment History</a></li>
-	        <li><a href="login.html" style="color:Violet;">Logout</a></li>
+    <li><a href="home" style="color:whitesmoke;">Home</a></li>
+	  <li><a href="info" style="color:whitesmoke;">Appointment Information</a></li>
+	  <li ><a href="history" style="color:whitesmoke;">Appointment History</a></li>
+	        <li><a href="logout" style="color:whitesmoke;">Logout</a></li>
 			
       </ul>
+    </div>
   </div>
 </nav>
+
+<table>
+    <tr>
+        <th>Date</th>
+        <th>City</th>
+        <th>Hospital</th>
+        <th>Status</th>
+        <th>Clinic</th>
+        <th>Doctor</th>
+    </tr>
+
+    {% for row in rows %}
+    <tr>
+        <td>{{ row.date }}</td>
+        <td>{{ row.city }}</td>
+        <td>{{ row.hospital_name }}</td>
+        <td>{{ row.status }}</td>
+        <td>{{ row.clinik }}</td>
+        <td>{{ row.doctor_name }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
 
 </body>
 
