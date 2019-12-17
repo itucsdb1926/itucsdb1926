@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>Children Vaccine</h2>
+
+<table>
+  <tr>
+    <th>Child Name</th>
+    <th>Name</th>
+      <th>Date</th>
+      <th>Place</th>
+      <th>Method</th>
+      <th>Dose</th>
+  </tr>
+{% for row in rows %}
+<tr>
+    <td>{{ row.child_name }}</td>
+    <td>{{ row.name}}</td>
+    <td>{{ row.date}}</td>
+    <td>{{ row.place}}</td>
+    <td>{{ row.method}}</td>
+    <td>{{ row.dose}}</td>
+</tr>
+{% endfor %}
+
+</table>
